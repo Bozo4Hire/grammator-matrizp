@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--test-->
+<head>
+    <!---[Configuracion meta de la pagina]--->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://kit.fontawesome.com/001da3aa3a.js" crossorigin="anonymous"></script>
+
+    <!---[Archivos vinculados]--->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/language.css">
+    
+    <link rel="stylesheet" href="./css/universal.css">
+
+    <!---[Icono y titulo de la pagina]--->
+    <link rel="shortcut icon" href="./img/min_logo.png">
+    <title>Grammator | Derivador</title>
+</head>
+
+<body>
+    <section class="cont_general">
+
+        <!---[Contenido izquierdo de la pagina]--->
+        <section class="cont_left">
+            <!---[Logo en el menu principal]--->
+            <div class="cont_menu_logo">
+                <a class="btn_menu_logo" href="index.html"><img src="./img/min_logo.png"><h2>Grammator</h2></a>
+            </div>
+
+            <!---[Inicio del menu principal]--->
+            <div class="cont_buttons">
+                <p>Navegacion</p>
+                <a href="index.html"><span></span><i class="fa-solid fa-pen-to-square"></i>Editor</a>
+                <a href="language.html"><span></span><i class="fa-solid fa-language"></i>Derivador</a>
+                <a href="convertNDFA.html"><span></span><i class="fa-solid fa-gears"></i>Convertidor NDFA/DFA</a>
+                <a href="convertAutGram.html"><span></span><i class="fa-solid fa-diagram-project"></i>Convertidor aceptador/gramatica</a>
+                <a href="convertGramAuto.html"><span></span><i class="fa-solid fa-diagram-project"></i>Convertidor gramatica/aceptador</a>
+                <a href="expEvaluator.html"><span></span><i class="fa-solid fa-calculator"></i>Evaluador aritmetico</a>
+                <!--
+                <a href="#"><span></span><i class="fa-solid fa-calculator"></i>Derivador</a>
+                <a href="#"><span></span><i class="fa-solid fa-language"></i>Generar L(G)</a>
+                <a href="#"><span></span><i class="fa-solid fa-circle-info"></i>Informacion</a>-->
+            </div>
+        </section>
+        
+        <!---[Contenido derecho de la pagina]--->
+        <section class="cont_right">
+            <!---[Menu principal]--->
+            <section class="cont_menu">
+                <section class="cont_menu_btn">
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#"><i class="fa-solid fa-users"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                </section>
+            </section>
+
+            <!---[Interfaz del derivador]--->
+            <section class="cont_editor">
+                <div class="cont_editor_tit">
+                    <div class="cont_et_left">
+                        <h2>Derivador</h2>
+                        <input type="file" name="Importar gramatica" id="inputGrammar">
+                    </div>
+                </div>
+
+                <div class="cont_crud">
+                    <div>
+                        <!---[Tabla para mostrar la secuencia de derivaciones]--->
+                        <div class="cont_rules cont_table">
+                            <table id="derivationSeq">
+                                <thead>
+                                    <tr>
+                                        <th>Secuencia de derivacion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="derivationSeqBody">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <section class="cont_tables">
+                            <!---[Tabla para mostrar la gramatica importada]--->
+                            <div class="cont_dispRules cont_table">
+                                <table class="list" id="grammarList">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Izquierda</th>
+                                            <th>Derecha</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!---[Tabla para mostrar las reglas disponibles]--->
+                            <div class="cont_deriv cont_table">
+                                <table class="list" id="optionList">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th colspan="0">Izquierda</th>
+                                            <th></th>
+                                            <th>Derecha</th>
+                                            <th>Seleccion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <!---[Tabla para desplegar el lenguaje generado]--->
+                        <div class="cont_message cont_table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Lenguaje generado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="currentLanguageBody">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    <div>
+                </div>
+            </section>
+        </section>
+
+    </section>
+
+    <!---[Scripts importados]--->
+    <script type="text/javascript" src="./js/fileSaver.js"></script>
+    <script type="text/javascript" src="./js/form.js"></script>
+    <script type="text/javascript" src="./js/language.js"></script>
+</body>
+
+</html>

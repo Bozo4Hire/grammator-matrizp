@@ -1,0 +1,64 @@
+.cont_buttons a:nth-child(2){
+    background-color: #434c5e;
+    color: #9c9fa5;
+}
+.cont_buttons a:nth-child(2) span{
+    display: none;
+}
+.cont_buttons a:nth-child(6){
+    background-color: #3b4252;
+    color: #eceff4;
+}
+.cont_buttons a:nth-child(6) span{
+    width: 5px;
+    height: 100%;
+    background-color: #326097;
+    margin-right: 15px;
+}
+
+
+
+
+.cont_input_text input:nth-child(2){
+    width: 110px;
+}
+.cont_input_text input:nth-child(4){
+    margin-right: 10px;
+}
+.cont_btn_siglamb input:nth-child(1){
+    width: 40px;
+}
+.cont_btn_siglamb input:nth-child(2){
+    width: 40px;
+}
+
+
+
+.cont_tables{
+    display: flex;
+    width: 100%;
+}
+.cont_table{
+    width: 45%;
+    height: 500px;
+}
+.cont_table h2{
+    color: #eceff4;
+    font-size: 18px;
+    font-weight: normal;
+    text-indent: 25px;
+    width: 100%;
+    height: 40px;
+    padding-top: 15px;
+    background-color: #3b4252;
+    border-bottom: 3px solid #434c5e;
+    border-radius: 5px 5px;
+}
+.cont_table h2 a{
+    background-color: #639439;
+    font-size: 20px;
+    padding: 5px 8px;
+    border-radius: 50px;
+    color: #eceff4;
+    margin-left: 20px;
+}

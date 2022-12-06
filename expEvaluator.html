@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--test-->
+<head>
+    <!---[Configuracion meta de la pagina]--->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://kit.fontawesome.com/001da3aa3a.js" crossorigin="anonymous"></script>
+
+    <!---[Archivos vinculados]--->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/expEvaluator.css">
+    <link rel="stylesheet" href="./css/universal.css">
+
+    <!---[Icono y titulo de la pagina]--->
+    <link rel="shortcut icon" href="./img/min_logo.png">
+    <title>Grammator | Evaluador</title>
+</head>
+
+<body>
+    <section class="cont_general">
+
+        <!---[Contenido izquierdo de la pagina]--->
+        <section class="cont_left">
+            <!---[Logo en el menu principal]--->
+            <div class="cont_menu_logo">
+                <a class="btn_menu_logo" href="index.html"><img src="./img/min_logo.png"><h2>Grammator</h2></a>
+            </div>
+
+            <!---[Inicio del menu principal]--->
+            <div class="cont_buttons">
+                <p>Navegacion</p>
+                <a href="index.html"><span></span><i class="fa-solid fa-pen-to-square"></i>Editor</a>
+                <a href="language.html"><span></span><i class="fa-solid fa-language"></i>Derivador</a>
+                <a href="convertNDFA.html"><span></span><i class="fa-solid fa-gears"></i>Convertidor NDFA/DFA</a>
+                <a href="convertAutGram.html"><span></span><i class="fa-solid fa-diagram-project"></i>Convertidor aceptador/gramatica</a>
+                <a href="convertGramAuto.html"><span></span><i class="fa-solid fa-diagram-project"></i>Convertidor gramatica/aceptador</a>
+                <a href="expEvaluator.html"><span></span><i class="fa-solid fa-calculator"></i>Evaluador aritmetico</a>
+                <!--
+                <a href="#"><span></span><i class="fa-solid fa-calculator"></i>Derivador</a>
+                <a href="#"><span></span><i class="fa-solid fa-language"></i>Generar L(G)</a>
+                <a href="#"><span></span><i class="fa-solid fa-circle-info"></i>Informacion</a>-->
+            </div>
+        </section>
+        
+        <!---[Contenido derecho de la pagina]--->
+        <section class="cont_right">
+            <!---[Menu principal]--->
+            <section class="cont_menu">
+                <section class="cont_menu_btn">
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#"><i class="fa-solid fa-users"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                </section>
+            </section>
+
+            <!---[Interfaz del editor]--->
+            <section class="cont_editor">
+                <div class="cont_editor_tit">
+                    <div class="cont_et_left">
+                        <h2>Evaluador</h2>
+                    </div>
+                    <div class="cont_et_right">
+                        <a href="#" onclick="evaluateExpression()">Evaluar expresión</a>
+                        <a href="#" onclick="resetValues()">Reiniciar</a>
+                    </div>
+                </div>
+
+                <div class="cont_crud">
+                    <div>
+                        <form autocomplete="off" onsubmit="onFormSubmit()">
+                            <div class="cont_insert">
+                                <table>
+                                    <tr>
+                                        <td>                                           
+                                            <div class="cont_input_text">
+                                                <!--
+                                                <div class="cont_btn_siglamb">
+                                                    <input type="button" value="(" onclick="onSigmaClick()" id="sigma_btn">
+                                                    <input type="button" value=")" onclick="onLambdaClick()" id="lambda_btn">
+                                                </div> -->
+                                                <input type="text" placeholder="Expresión" id="expresion" required>
+                                                <i class="fa-solid fa-equals"></i>
+                                                <div class="cont_input_result" id="result">
+                                                   
+                                                </div>
+                                            </div>
+                                            <!-- 
+                                            <div class="cont_btn_input">
+                                                <input type="submit" value="Insertar">
+                                                <input type="button" value="Reiniciar" onclick="resetInput()">
+                                            </div> -->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </form>
+                        <div class="cont_table">
+                            <table class="list" id="evaluationList">
+                                <thead>
+                                    <tr>
+                                        <th>n</th>
+                                        <th>σ</th>
+                                        <th>Ψ</th>
+                                        <th>τ</th>
+                                        <th>α</th>
+                                        <th>ρ</th>
+                                        <th>n1</th>
+                                        <th>n2</th>
+                                        <th>n3</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                         
+                        <div class="cont_type_gr" id="errorMsg">
+                            
+                        </div> 
+                    <div>
+                </div>
+            </section>
+        </section>
+
+    </section>
+    <script type="text/javascript" src="./js/matrixP.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+</body>
+
+</html>
